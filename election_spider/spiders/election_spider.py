@@ -1,7 +1,7 @@
 import urllib.request
 from scrapy.spiders import CrawlSpider, Rule
 from scrapy.linkextractors import LinkExtractor
-from zip_handler.functions import extractor
+from zip_handler.functions import extractor, delete
 
 class ElectionSpider(CrawlSpider):
     name = 'election_spider'
@@ -23,3 +23,4 @@ class ElectionSpider(CrawlSpider):
             with open(f'/home/nicholas/Repos/brazilian_election_data_analysis/election_data/{file_name}', 'wb') as out_file:
                 out_file.write(f.read())
         extractor(file_list)
+        delete(file_list)
