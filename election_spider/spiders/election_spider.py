@@ -2,6 +2,11 @@ import urllib.request
 from scrapy.spiders import CrawlSpider, Rule
 from scrapy.linkextractors import LinkExtractor
 from zip_handler.functions import extractor, delete
+from pathlib import Path
+
+data_path = Path.home()
+data_path = data_path.joinpath('repos/brazilian_election_data_analysis/election_data/')
+
 
 class ElectionSpider(CrawlSpider):
     name = 'election_spider'
@@ -20,7 +25,7 @@ class ElectionSpider(CrawlSpider):
         file_name = file_url.split('/')[-1]
         file_list = [file_name]
         with urllib.request.urlopen(file_url) as f:
-            with open(f'/home/nicholas/Repos/brazilian_election_data_analysis/election_data/{file_name}', 'wb') as out_file:
+            with open(f'/home/joao_victor/repos/brazilian_election_data_analysis/election_data/{file_name}', 'wb') as out_file:
                 out_file.write(f.read())
         extractor(file_list)
         delete(file_list)
