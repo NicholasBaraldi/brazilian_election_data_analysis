@@ -1,7 +1,7 @@
 import urllib.request
 from scrapy.spiders import CrawlSpider, Rule
 from scrapy.linkextractors import LinkExtractor
-from zip_handler.functions import extractor, delete, data_path
+from data_handler.functions import extractor, delete, data_path
 
 class ElectionSpider(CrawlSpider):
     name = 'election_spider'

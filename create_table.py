@@ -1,5 +1,5 @@
-from zip_handler.functions import create_table
-from zip_handler.functions import data_path, create_list, copy_table
+from data_handler.functions import create_table
+from data_handler.functions import data_path, create_list, copy_table
 import pandas as pd
 from sqlalchemy import create_engine
 
