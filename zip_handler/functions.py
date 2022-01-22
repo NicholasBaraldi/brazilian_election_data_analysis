@@ -39,7 +39,7 @@ def copy_table (file_list):
     for i in file_list:
         #print(f"\\copy \"{i}\" from '{data_path}/{i}' DELIMITER ';' ENCODING 'latin1' csv header")
         with open(f'{data_path}/{i}', 'r', encoding='latin1') as file:
-            file.readline
+            file.readline()
             cur.copy_from(file, i, sep = ';')
             conn.commit()
     cur.close()
