@@ -33,14 +33,15 @@ FROM "perfil_eleitorado_2010.csv"
 
 
 Select 
-    Cast(Replace("ANO_ELEICAO", '"', '') AS varchar(20)) AS "ANO_ELEICAO",
-    Cast(Replace("SG_UF", '"', '') AS varchar(20)) AS "SG_UF",
-    Cast(Replace("CD_MUNICIPIO", '"', '') AS varchar(20)) AS "CD_MUNICIPIO",
+    Cast(Replace("ANO_ELEICAO", '"', '') AS varchar(100)) AS "ANO_ELEICAO",
+    Cast(Replace("SG_UF", '"', '') AS varchar(100)) AS "SG_UF",
+    Cast(Replace("CD_MUNICIPIO", '"', '') AS varchar(100)) AS "CD_MUNICIPIO",
     Cast(Replace("NM_MUNICIPIO", '"', '') AS varchar(100)) AS "NM_MUNICIPIO",
-    Cast(Replace("CD_GENERO", '"', '') AS varchar(20)) AS "CD_GENERO",
-    Cast(Replace("DS_GENERO", '"', '') AS varchar(20)) AS "DS_GENERO",
-    Cast(Replace("CD_GRAU_ESCOLARIDADE", '"', '') AS varchar(20)) AS "CD_GRAU_ESCOLARIDADE",
-    Cast(Replace("DS_GRAU_ESCOLARIDADE", '"', '') AS varchar(20)) AS "DS_GRAU_ESCOLARIDADE",
+    Cast(Replace("NR_ZONA", '"', '') AS varchar(100)) AS "NR_ZONA",
+    Cast(Replace("CD_GENERO", '"', '') AS varchar(100)) AS "CD_GENERO",
+    Cast(Replace("DS_GENERO", '"', '') AS varchar(100)) AS "DS_GENERO",
+    Cast(Replace("CD_GRAU_ESCOLARIDADE", '"', '') AS varchar(100)) AS "CD_GRAU_ESCOLARIDADE",
+    Cast(Replace("DS_GRAU_ESCOLARIDADE", '"', '') AS varchar(100)) AS "DS_GRAU_ESCOLARIDADE",
     Cast(Replace("QT_ELEITORES_PERFIL", '"', '') AS bigint) AS "QT_ELEITORES_PERFIL",
     Cast(Replace("QT_ELEITORES_BIOMETRIA", '"', '') AS bigint) AS "QT_ELEITORES_BIOMETRIA",
     Cast(Replace("QT_ELEITORES_DEFICIENCIA", '"', '') AS bigint) AS "QT_ELEITORES_DEFICIENCIA",
