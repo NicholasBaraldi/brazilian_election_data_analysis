@@ -4,7 +4,7 @@ from zipfile import ZipFile
 import pandas as pd
 from sqlalchemy import create_engine
 import psycopg2 as ps
-
+import csv 
 data_path = Path.home()
 data_path = data_path.joinpath('repos/brazilian_election_data_analysis/election_data/')
 
@@ -27,11 +27,17 @@ def create_list (data_path):
     return file_list
 
 def create_table (file_name):
+    num_rows = 0 
     for i in file_name:
-        df = pd.read_csv(data_path.joinpath(i), sep = ';' , header = 0, encoding = 'latin1', nrows = 1000, index_col = False, dtype= str)
+        with open(f'{data_path}/{i}', 'r', encoding='latin1') as file:
+            reader = csv.reader(file)
+            lines  = int(len(list(reader)))   
+        df = pd.read_csv(data_path.joinpath(i), sep = ';' , header = 0, encoding = 'latin1', nrows = int(lines*0.1), index_col = False, dtype = str)
         engine = create_engine('postgresql://postgres:mysecretpassword@localhost:5432/postgres')
-        df.head(0).to_sql(i, engine, if_exists = 'replace', index = False)
+        df.to_sql(i, engine, if_exists = 'replace', index = False)
+        #df.head(0).to_sql(i, engine, if_exists = 'replace', index = False)
 
+'''
 def copy_table (file_list):
     engine = create_engine('postgresql://postgres:mysecretpassword@localhost:5432/postgres')
     conn = engine.raw_connection() 
@@ -44,4 +50,5 @@ def copy_table (file_list):
             conn.commit()
     cur.close()
     conn.close()
+'''
     
