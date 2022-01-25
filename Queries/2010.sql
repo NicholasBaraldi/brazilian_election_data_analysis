@@ -7,5 +7,5 @@ Select
     Cast("FEMININO" AS varchar(100)) AS "GENERO",
     Cast("16 ANOS" AS varchar(100)) AS "FAIXA_ETARIA",
     Cast("ENSINO FUNDAMENTAL COMPLETO" AS varchar(100)) AS "GRAU_DE_ESCOLARIDADE",
-    Cast("2" AS varchar(100)) AS "QTD_ELEITORES_NO_PERFIL"
+    Cast("2" AS bigint) AS "QTD_ELEITORES_NO_PERFIL"
 From "perfil_eleitorado_2010.txt"
