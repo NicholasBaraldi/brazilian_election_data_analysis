@@ -14,7 +14,7 @@ END AS "NR_ZONA",
 CASE
 WHEN (Select COUNT("CD_ESTADO_CIVIL") 
         FROM "perfil_eleitorado_1998.csv"
-        Where "CD_ESTADO_CIVIL" = '-3') = COUNT("DS_ESTADO_CIVIL") THEN TRUE
+        Where "CD_ESTADO_CIVIL" = '-3') = COUNT("CD_ESTADO_CIVIL") THEN TRUE
 ELSE FALSE
 END AS "CD_ESTADO_CIVIL",
 CASE
@@ -26,7 +26,7 @@ END AS "CD_FAIXA_ETARIA",
 CASE
 WHEN (Select COUNT("CD_GRAU_ESCOLARIDADE") 
         FROM "perfil_eleitorado_1998.csv"
-        Where "DS_GRAU_ESCOLARIDADE" = '0') = COUNT("DS_GRAU_ESCOLARIDADE") THEN TRUE
+        Where "CD_GRAU_ESCOLARIDADE" = '0') = COUNT("CD_GRAU_ESCOLARIDADE") THEN TRUE
 ELSE FALSE 
 END AS "CD_GRAU_ESCOLARIDADE"
 FROM "perfil_eleitorado_1998.csv"
@@ -39,8 +39,6 @@ Select
     Cast(Replace("NM_MUNICIPIO", '"', '') AS varchar(100)) AS "NM_MUNICIPIO",
     Cast(Replace("CD_GENERO", '"', '') AS varchar(100)) AS "CD_GENERO",
     Cast(Replace("DS_GENERO", '"', '') AS varchar(100)) AS "DS_GENERO",
-    Cast(Replace("CD_GRAU_ESCOLARIDADE", '"', '') AS varchar(100)) AS "CD_GRAU_ESCOLARIDADE",
-    Cast(Replace("DS_GRAU_ESCOLARIDADE", '"', '') AS varchar(100)) AS "DS_GRAU_ESCOLARIDADE",
     Cast(Replace("QT_ELEITORES_PERFIL", '"', '') AS bigint) AS "QT_ELEITORES_PERFIL",
     Cast(Replace("QT_ELEITORES_BIOMETRIA", '"', '') AS bigint) AS "QT_ELEITORES_BIOMETRIA",
     Cast(Replace("QT_ELEITORES_DEFICIENCIA", '"', '') AS bigint) AS "QT_ELEITORES_DEFICIENCIA",
