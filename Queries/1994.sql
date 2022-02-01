@@ -1,4 +1,4 @@
-# Query para saber qual coluna é inutil
+-- Cheking for not colected values
 Select 
 CASE 
 WHEN (Select COUNT("CD_MUN_SIT_BIOMETRICA") 
@@ -33,7 +33,7 @@ END AS "CD_GRAU_ESCOLARIDADE"
 FROM "perfil_eleitorado_1994.csv"
 
 
-# Query para cleanar
+-- Casting and cleaning table
 
 Select 
     Cast(Replace("ANO_ELEICAO", '"', '') AS varchar(100)) AS "ANO_ELEICAO",

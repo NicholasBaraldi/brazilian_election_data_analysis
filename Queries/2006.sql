@@ -1,3 +1,4 @@
+-- Cheking for not colected values
 Select 
 CASE 
 WHEN (Select COUNT("CD_MUN_SIT_BIOMETRICA") 
@@ -31,6 +32,7 @@ ELSE FALSE
 END AS "CD_GRAU_ESCOLARIDADE"
 FROM "perfil_eleitorado_2006.csv"
 
+-- Casting and cleaning table
 Select 
     Cast(Replace("ANO_ELEICAO", '"', '') AS varchar(100)) AS "ANO_ELEICAO",
     Cast(Replace("SG_UF", '"', '') AS varchar(100)) AS "SG_UF",

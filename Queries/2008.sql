@@ -1,4 +1,4 @@
-
+-- Casting and cleaning table
 Select 
     Cast("2008" AS varchar(100)) AS "ANO_ELEICAO",
     Cast("AC" AS varchar(100)) AS "SG_UF",
