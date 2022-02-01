@@ -4,6 +4,7 @@ from scrapy.linkextractors import LinkExtractor
 from data_handler.functions import extractor, delete, data_path
 
 class ElectionSpider(CrawlSpider):
+
     name = 'election_spider'
     
     start_urls = ['https://dadosabertos.tse.jus.br/dataset/?groups=eleitorado']
@@ -13,6 +14,7 @@ class ElectionSpider(CrawlSpider):
         Rule(LinkExtractor(allow=('eleitorado\-[0-9]+', )), callback='parse_item'),
     )
 
+    # Parsing href tag to get the correct download link
     def parse_item(self, response):
         file_list = []
         file_url = response.css('.resource-url-analytics::attr(href)').get()
