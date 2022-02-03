@@ -1,6 +1,5 @@
 # Brazilian Election Data Analysis
 
-###### tags: `Tag(change me!)`
 
 Welcome! This repo was created to upload our data analisys project
 
