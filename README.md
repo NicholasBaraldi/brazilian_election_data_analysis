@@ -5,8 +5,6 @@ Welcome! This repo was created to upload our data analisys project
 
 ![](https://i.imgur.com/f5LdxPV.gif)
 
-- Table of Content
-[ToC]
 
 ## :memo: Project
 ![](https://media.discordapp.net/attachments/392446181588074501/938595191907029012/unknown.png)
@@ -41,9 +39,9 @@ The data was handled in a way to minimize and optmize memory and storage, so:
 - Creating and uploading table to postgreSQL
 > It was used only a 10% sample of the data, chosen randomly.
 
-:::info
+
 :bulb: **Tip:** If you want to use the totality of the datasets, then you should use `copy_table` function combined with pandas `.head` method. Once `COPY TABLE` statement require less memory usage. 
-:::
+
 
 ---
 
