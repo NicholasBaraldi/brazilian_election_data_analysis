@@ -7,6 +7,7 @@ Welcome! This repo was created to upload our data analisys project.
 ## :memo: Project Summary
 
 This project had the intention of covering all steps of an **ELT** data integration, from extraction, passing through a creation of a data lake, uploaded to a database (data warehouse) and being transformed for data visualization.
+
 ![](https://cdn.discordapp.com/attachments/392446181588074501/938933559081717761/unknown.png)
 ### Step 1: Data Acquisition
 
@@ -39,9 +40,7 @@ The data was handled in a way to minimize and optmize memory and storage, so the
 - Creating and uploading table to postgreSQL
 > It was used only a 10% sample of the data, chosen randomly.
 
-:::info
 :bulb: **Tip:** If you want to use the totality of the datasets, then you should use `copy_table` function combined with pandas `.head` method. Once `COPY TABLE` statement require less memory usage. 
-:::
 
 ---
 
@@ -68,7 +67,7 @@ The data was handled in a way to minimize and optmize memory and storage, so the
 
 ### Step 4: Setting up Dremio's Virtual Datesets
 **Dremio** was mainly used to create virtual datasets, known as views in a **SQL** database. A series of **SQL** queries were made to format data type, remove the missing values from the data source and direct connecting those views to **PowerBI**.
-```sql=
+```sql
 Select 
     Cast(Replace("ANO_ELEICAO", '"', '') AS varchar(100)) AS "ANO_ELEICAO",
     Cast(Replace("SG_UF", '"', '') AS varchar(100)) AS "SG_UF",
@@ -84,7 +83,7 @@ From "perfil_eleitorado_1994.csv"
 ```
 Prior to the formatting queries, a verification of the columns was done:
 
-```sql=
+```sql
 Select 
 CASE 
 WHEN (Select COUNT("CD_MUN_SIT_BIOMETRICA") 
@@ -130,7 +129,7 @@ As an example the following images are some of the graphics created with **Power
 ![](https://cdn.discordapp.com/attachments/392446181588074501/938924658307248139/unknown.png)
 
 <p align="center">
-<img src="https://cdn.discordapp.com/attachments/392446181588074501/938932692853067796/unknown.png" width="361"/> <img src="https://cdn.discordapp.com/attachments/392446181588074501/938932132275970128/unknown.png" width="370"/> 
+<img src="https://cdn.discordapp.com/attachments/392446181588074501/938932692853067796/unknown.png" width="496"/> <img src="https://cdn.discordapp.com/attachments/392446181588074501/938932132275970128/unknown.png" width="510"/> 
 
 ---
 
