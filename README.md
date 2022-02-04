@@ -129,7 +129,7 @@ As an example the following images are some of the graphics created with **Power
 ![](https://cdn.discordapp.com/attachments/392446181588074501/938924658307248139/unknown.png)
 
 <p align="center">
-<img src="https://cdn.discordapp.com/attachments/392446181588074501/938932692853067796/unknown.png" width="486"/> <img src="https://cdn.discordapp.com/attachments/392446181588074501/938932132275970128/unknown.png" width="500"/> 
+<img src="https://cdn.discordapp.com/attachments/392446181588074501/938932692853067796/unknown.png" width="476"/> <img src="https://cdn.discordapp.com/attachments/392446181588074501/938932132275970128/unknown.png" width="490"/> 
 
 ---
 
